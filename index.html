@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perpustakaan Sekolah</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header style="background-image: url('22.jpg'); background-size: cover; background-position: center">
+      <div class="main">
+        <div class="logo">
+          <img src="333.png" alt="Logo Perpustakaan" />
+        </div>
+        <ul>
+          <li class="active"><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li>
+            <a href="#">Layanan</a>
+            <ul class="dropdown-menu">
+              <li><a href="#pendaftaran-anggota">Pendaftaran Anggota</a></li>
+              <li><a href="#informasi-layanan">Informasi Layanan</a></li>
+            </ul>
+          </li>
+          <li><a href="#koleksi">Koleksi</a></li>
+        </ul>
+      </div>
+      <div class="title">
+        <h1>Selamat Datang</h1>
+        <p>Di Perpustakaan Sekolah Kami</p>
+      </div>
+    </header>
+
+    <!-- Section About -->
+    <section id="about">
+      <div class="about-container">
+        <h2>About</h2>
+        <p>
+          Selamat datang di Perpustakaan Sekolah Kami! Perpustakaan ini didedikasikan untuk menjadi pusat pembelajaran dan eksplorasi pengetahuan bagi seluruh siswa dan staf. Kami menyediakan berbagai macam koleksi buku, mulai dari novel,
+          buku pelajaran, ensiklopedia, hingga buku motivasi. Kami juga menawarkan layanan seperti peminjaman buku, ruang baca, dan akses referensi digital.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section Layanan -->
+    <section id="layanan">
+      <div id="pendaftaran-anggota">
+        <h2>Pendaftaran Anggota</h2>
+        <form name="Daftar-Anggota">
+          <label for="nama">Nama Lengkap:</label>
+          <input type="text" id="nama" name="nama" required /><br />
+
+          <label for="kelas">Kelas:</label>
+          <input type="text" id="kelas" name="kelas" required /><br />
+
+          <label for="nis">Nomor Induk Siswa (NIS):</label>
+          <input type="text" id="nis" name="nis" required /><br />
+
+          <label for="alamat">Alamat:</label>
+          <input type="text" id="alamat" name="alamat" required /><br />
+
+          <label for="telepon">Nomor Telepon:</label>
+          <input type="text" id="telepon" name="telepon" required /><br />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required /><br />
+
+          <button type="submit">Daftar</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Section Koleksi -->
+    <section id="koleksi">
+      <div class="koleksi-container">
+        <h2>Koleksi Buku</h2>
+        <div class="book-gallery">
+          <div class="book-item">
+            <img src="novel.jpg" alt="Novel" />
+            <p>Novel</p>
+          </div>
+          <div class="book-item">
+            <img src="pelajaran.jpg" alt="Buku Pelajaran" />
+            <p>Buku Pelajaran</p>
+          </div>
+          <div class="book-item">
+            <img src="ensiklopedia 2.jpg" alt="Ensiklopedia" />
+            <p>Ensiklopedia</p>
+          </div>
+          <div class="book-item">
+            <img src="motivasi.jpg" alt="Buku Motivasi" />
+            <p>Buku Motivasi</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="address">
+          <p>Alamat: Jl. Pendidikan No. 10, Jakarta</p>
+        </div>
+        <div class="contact">
+          <p>Contact: perpustakaan@sekolah.id</p>
+        </div>
+        <div class="social">
+          <p>Follow us:</p>
+          <a href="https://facebook.com" target="_blank">
+            <img src="fb2.png" alt="Facebook" />
+          </a>
+          <a href="https://instagram.com" target="_blank">
+            <img src="ig.jpg" alt="Instagram" />
+          </a>
+          <a href="https://twitter.com" target="_blank">
+            <img src="tt.png" alt="Twitter" />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const scriptURL = "https://script.google.com/macros/s/AKfycbxVI3rRbgCjSL3lREPGygEWan5AsfQubs3jtJ1WG4ra1GPIxvEkN5N-dkb7q1sXB_Hr/exec";
+      const form = document.forms["Daftar-Anggota"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => console.log("Success!", response))
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+  </body>
+</html>

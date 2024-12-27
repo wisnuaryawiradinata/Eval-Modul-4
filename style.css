@@ -1,0 +1,295 @@
+/* Reset Dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("background.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+}
+
+/* Logo */
+.logo {
+  position: absolute;
+  top: -3px;
+  left: 20px;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+}
+/* Navbar */
+.main {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Background navbar */
+  z-index: 10;
+}
+
+.main ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 15px 0;
+}
+
+.main ul li {
+  margin: 0 15px;
+  position: relative; /* Untuk submenu */
+}
+
+.main ul li a {
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.main ul li a:hover {
+  background: white;
+  color: #333;
+}
+
+.main ul li.active a {
+  background: white;
+  color: #333;
+}
+
+/* Submenu */
+.main ul li ul {
+  display: none; /* Disembunyikan secara default */
+  position: absolute;
+  top: calc(100% + 10px); /* Jarak submenu dari item utama */
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #444, #222); /* Background gradient submenu */
+  list-style-type: none;
+  padding: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Efek bayangan */
+  z-index: 20;
+  min-width: 220px;
+}
+
+.main ul li ul li {
+  margin: 5px 0; /* Jarak antar item submenu */
+}
+
+.main ul li ul li a {
+  padding: 10px 20px;
+  display: block; /* Submenu sebagai blok */
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  transition: background 0.3s ease, color 0.3s ease;
+  border-radius: 5px; /* Tambahkan radius untuk item */
+}
+
+.main ul li ul li a:hover {
+  background: rgba(255, 255, 255, 0.2); /* Efek hover transparan */
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Tambahkan bayangan saat hover */
+}
+
+/* Submenu Muncul dengan Klik */
+.main ul li:focus-within ul,
+.main ul li:has(ul:focus) ul {
+  display: block;
+}
+
+/* Judul Jumbotron */
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.title h1 {
+  font-size: 4em;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.title p {
+  font-size: 1.5em;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Section About */
+.about-container {
+  padding: 50px;
+  text-align: center;
+}
+
+.about-container h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.about-container p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+/* Section Layanan */
+#layanan {
+  padding: 50px;
+  text-align: center;
+  line-height: 2; /* Menambahkan line spacing 2*/
+}
+
+#layanan h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+#layanan form {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#layanan form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+#layanan form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#layanan form button {
+  background: #acb0b2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#layanan form button:hover {
+  background: #acb0b2;
+}
+
+/* Section Koleksi */
+.koleksi-container {
+  padding: 30px; /* Kurangi padding dari 50px menjadi 30px */
+  text-align: center;
+}
+
+.koleksi-container h2 {
+  font-size: 2em;
+  margin-bottom: 15px; /* Kurangi jarak bawah dari 20px menjadi 15px */
+  margin-top: -20px; /* Naikkan judul dengan margin negatif */
+}
+
+/* Menampilkan gambar buku berjajar ke samping */
+.book-gallery {
+  display: flex; /* Mengatur elemen dalam satu baris */
+  justify-content: center; /* Menjadikan elemen di tengah */
+  flex-wrap: wrap; /* Membungkus elemen ke baris baru jika layar sempit */
+  gap: 20px; /* Memberikan jarak antar gambar */
+}
+
+.book-item {
+  text-align: center; /* Teks berada di tengah gambar */
+  width: 180px; /* Lebar setiap elemen gambar sama */
+  height: auto; /* Menjaga ukuran sesuai */
+  transition: transform 0.3s ease; /* Menambahkan animasi transisi */
+}
+
+.book-item img {
+  width: 100%; /* Gambar menyesuaikan lebar kontainer */
+  height: 240px; /* Membuat tinggi gambar konsisten */
+  object-fit: cover; /* Memotong gambar agar proporsional */
+  border-radius: 10px; /* Membuat sudut gambar melengkung */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi untuk zoom */
+}
+
+/* Efek zoom saat hover */
+.book-item:hover img {
+  transform: scale(1.1); /* Zoom sedikit */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Bayangan lebih besar */
+}
+
+.book-item p {
+  margin-top: 10px;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background: #333; /* Warna latar belakang */
+  color: white; /* Warna teks */
+  padding: 20px 0; /* Padding atas dan bawah */
+  text-align: center; /* Rata tengah secara keseluruhan */
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row; /* Elemen tersusun horizontal */
+  justify-content: space-between; /* Jarak antar elemen */
+  align-items: center; /* Elemen berada di tengah secara vertikal */
+  max-width: 1200px; /* Batas lebar kontainer */
+  margin: 0 auto; /* Posisi tengah untuk kontainer */
+  padding: 0 20px; /* Memberikan padding sisi */
+}
+
+.address,
+.contact {
+  font-size: 1em; /* Ukuran teks */
+  margin: 0; /* Menghilangkan margin untuk rapi */
+  text-align: left; /* Teks rata kiri */
+}
+
+.social {
+  display: flex; /* Menyusun ikon secara horizontal */
+  gap: 20px; /* Jarak antar ikon */
+  align-items: center; /* Ikon disejajarkan secara vertikal */
+}
+
+.social img {
+  width: 30px; /* Ukuran ikon */
+  height: 30px; /* Tinggi ikon */
+  border-radius: 50%; /* Membuat ikon berbentuk lingkaran */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi hover */
+}
+
+.social img:hover {
+  transform: scale(1.1); /* Efek zoom saat hover */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Efek bayangan saat hover */
+}
+
+/* Menyesuaikan untuk layar kecil */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column; /* Susunan vertikal untuk layar kecil */
+    text-align: center; /* Rata tengah semua elemen */
+    gap: 15px; /* Jarak antar elemen */
+  }
+
+  .social {
+    justify-content: center; /* Ikon tetap di tengah */
+  }
+}
